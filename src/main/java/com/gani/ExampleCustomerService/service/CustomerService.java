@@ -19,7 +19,7 @@ public class CustomerService {
         return repo.findAll();
     }
 
-    public @Nullable FullDetails findFullDetails(Long id) {
+    public @Nullable FullDetails findFullDetailsById(Long id) {
         AccountDetails details = repo.findById(id).orElse(new AccountDetails());
         List<Customer> customers = loanDetails.getCust(id).getBody();
         return new FullDetails(details,customers);
@@ -52,4 +52,6 @@ public class CustomerService {
         return repo.save(details);
 
     }
+
+
 }

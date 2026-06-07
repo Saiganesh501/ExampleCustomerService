@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+// Just Added Comment
 @RestController
 public class CustomerController{
 
@@ -34,7 +34,8 @@ public class CustomerController{
     }
 
     @GetMapping("/fulldetails/{id}")
-    public ResponseEntity<FullDetails> getFullDetails(@PathVariable Long id){
-        return ResponseEntity.ok(service.findFullDetails(id));
+    public ResponseEntity<FullDetails> getFullDetailsById(@PathVariable Long id){
+        return ResponseEntity.ok(service.findFullDetailsById(id));
     }
+
 }
